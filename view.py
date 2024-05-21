@@ -18,7 +18,6 @@ def criar_curso(i):
 		query = "INSERT INTO Cursos (nome, duracao, preco) VALUES (?,?,?)"
 		cur.execute(query,i)
 
-criar_curso (['Python', 'Semanas', 50])
 
 #VER TODOS OS CURSO (READ R)
 def ver_cursos():
@@ -32,7 +31,6 @@ def ver_cursos():
 			lista.append(i)
 	return lista
 
-print(ver_cursos()) 
 
 #Atualizar os Cursos (Update U)
 def atualizar_curso(i):
@@ -40,7 +38,6 @@ def atualizar_curso(i):
 		cur = con.cursor()
 		query = "UPDATE Cursos SET nome=?, duracao=?, preco=? WHERE id=?"
 		cur.execute(query,i)
-l = ['Python', 'Duas Semanas', 50.0, 1]
 
 
 #Deletar os Cursos (Delete D)
