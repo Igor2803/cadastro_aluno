@@ -58,7 +58,7 @@ def deletar_curso(i):
 def criar_turma(i):
 	with con:
 		cur = con.cursor()
-		query = "ISERT INTO Turmas (nome, cursos_nome, data_inicio) VALUES (?, ?, ?)"
+		query = "INSERT INTO Turmas (nome, curso_nome , data_inicio) VALUES (?, ?, ?)"
 		cur.execute(query, i)
 
 
@@ -96,7 +96,7 @@ def deletar_turma(i):
 def criar_alunos(i):
 	with con:
 		cur = con.cursor()
-		query = "ISERT INTO Alunos (nome, email, telefone, sexo, imagem, data_nascimento, cpf, turma_nome) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+		query = "INSERT INTO Alunos (nome, email, telefone, sexo, imagem, data_nascimento, cpf, tuma_nome) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
 		cur.execute(query, i)
 
 
@@ -117,7 +117,7 @@ def ver_alunos():
 def atualizar_alunos(i):
 	with con:
 		cur = con.cursor()
-		query = "UPDATE Alunos SET nome=?, email=?, telefone=?, sexo=?, imagem=?, data_nascimento=?, cpf=?, turma_nome=? WHERE id=?"
+		query = "UPDATE Alunos SET nome=?, email=?, telefone=?, sexo=?, imagem=?, data_nascimento=?, cpf=?, tuma_nome=? WHERE id=?"
 		cur.execute(query,i)
 
 #Deletar Aluno (Delete D)
@@ -125,4 +125,10 @@ def deletar_aluno(i):
 	with con:
 		cur = con.cursor()
 		query = "DELETE FROM Alunos WHERE id=?"
+		cur.execute(query,i)
+
+def procurar_aluno(i):
+	with con:
+		cur = con.cursor()
+		query = "SELECT * FROM Alunos WHERE id=?"
 		cur.execute(query,i)
