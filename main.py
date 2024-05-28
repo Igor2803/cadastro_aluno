@@ -32,7 +32,7 @@ co9 = "#e9edf5"   # + verde
 
 janela = Tk()
 janela.title("")
-janela.geometry('875x620')
+janela.geometry('1900x1050')
 janela.configure(background=co1)
 janela.resizable(width=FALSE, height=FALSE)
 
@@ -40,20 +40,20 @@ style = Style(janela)
 style.theme_use("clam")
 
 # Criando Frames
-frame_logo = Frame(janela, width=850, height=52, bg=co6)
+frame_logo = Frame(janela, width=1900, height=52, bg=co6)
 frame_logo.grid(row=0, column=0, pady=0, padx=0, sticky=NSEW)
 
 ttk.Separator(janela, orient=HORIZONTAL).grid(row=1, columnspan=1, ipadx=680)
 
-frame_dados = Frame(janela, width=850, height=65, bg=co1)
+frame_dados = Frame(janela, width=1900, height=65, bg=co1)
 frame_dados.grid(row=2, column=0, pady=0, padx=0, sticky=NSEW)
 
 ttk.Separator(janela, orient=HORIZONTAL).grid(row=3, columnspan=1, ipadx=680)
 
-frame_detalhes = Frame(janela, width=850, height=200, bg=co1)
+frame_detalhes = Frame(janela, width=1900, height=200, bg=co1)
 frame_detalhes.grid(row=4, column=0, pady=0, padx=10, sticky=NSEW)
 
-frame_tabela = Frame(janela, width=850, height=200, bg=co1)
+frame_tabela = Frame(janela, width=1900, height=200, bg=co1)
 frame_tabela.grid(row=5, column=0, pady=0, padx=10, sticky=NSEW)
 
 
@@ -294,14 +294,14 @@ def alunos():
     c_sexo.place(x=190, y=160)
 
     l_data_nascimento = Label(frame_detalhes, text="Data de Nascimento *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
-    l_data_nascimento.place(x=462, y=10)
+    l_data_nascimento.place(x=562, y=10)
     data_nascimento = DateEntry(frame_detalhes, width=18, background='darkblue', foreground='white', borderwidth=2, year=2024)
-    data_nascimento.place(x=462, y=40)
+    data_nascimento.place(x=562, y=40)
 
     l_cpf = Label(frame_detalhes, text="CPF *", height=1, anchor=NW, font=('Ivy 10' ), bg=co1, fg=co4)
-    l_cpf.place(x=462, y=70)
+    l_cpf.place(x=562, y=70)
     e_cpf= Entry(frame_detalhes, width=20, justify='left', relief='solid')
-    e_cpf.place(x=462, y=100)
+    e_cpf.place(x=562, y=100)
 
     #Pegando as Turmas
     turmas = ver_turmas()
@@ -311,10 +311,10 @@ def alunos():
        turma.append(i [1])
 
     l_turma = Label(frame_detalhes, text="Turma *", height=1, anchor=NW, font=('Ivy 10' ), bg=co1, fg=co4)
-    l_turma.place(x=467, y=130)
+    l_turma.place(x=567, y=130)
     c_turma = ttk.Combobox(frame_detalhes, width=20, font=('Ivy 8'))
     c_turma['values'] = (turma)
-    c_turma.place(x=467, y=160)
+    c_turma.place(x=567, y=160)
 
 
     # funcao para escolher imagem
@@ -337,37 +337,37 @@ def alunos():
         botao_carregar['text'] = 'Trocar de foto'
 
     botao_carregar= Button (frame_detalhes,command=escolher_imagem,  text="carregar Foto".upper(), width=20, compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 7'), bg=co1, fg=co0)
-    botao_carregar.place(x=310, y=160)
+    botao_carregar.place(x=350, y=160)
 
 
     # linha separatoria --------
     l_linha = Label(frame_detalhes, relief=GROOVE, text='h', width=1, height=100, anchor=NW, font=('Ivy 1'), bg=co0, fg=co0)
-    l_linha.place(x=635, y=10)
+    l_linha.place(x=835, y=10)
     l_linha = Label(frame_detalhes, relief=GROOVE, text='h', width=1, height=100, anchor=NW, font=('Ivy 1'), bg=co1, fg=co0)
-    l_linha.place(x=633, y=10)
+    l_linha.place(x=833, y=10)
 
     # Procurar aluno ---------
     l_nome = Label(frame_detalhes, text="Procurar Aluno [Entrar o nome]", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
-    l_nome.place(x=645, y=10)
+    l_nome.place(x=845, y=10)
     e_nome_procurar= Entry(frame_detalhes, width=15, justify="center", relief="solid", font=('Ivy 10'))
-    e_nome_procurar.place(x=648, y=35 )
+    e_nome_procurar.place(x=848, y=35 )
 
     botao_procurar = Button(frame_detalhes,command=procurar, anchor=CENTER, text='Procurar', width=8, overrelief=RIDGE, font=('Ivy 7 bold'), bg=co1, fg=co0)
-    botao_procurar.place(x=777, y=35)
+    botao_procurar.place(x=977, y=35)
     
     #Botoes
 
     botao_salvar = Button(frame_detalhes, command=novo_aluno, anchor=CENTER, text='Salvar'.upper(), width=10, overrelief=RIDGE, font=('Ivy 7 bold'), bg=co3, fg=co1)
-    botao_salvar.place(x=648, y=110)
+    botao_salvar.place(x=848, y=110)
 
     botao_atualizar = Button(frame_detalhes, command=update_aluno, anchor=CENTER, text='Atualizar'.upper(), width=10, overrelief=RIDGE, font=('Ivy 7 bold'), bg=co6, fg=co1)
-    botao_atualizar.place(x=648, y=139)
+    botao_atualizar.place(x=848, y=139)
 
     botao_deletar = Button(frame_detalhes, command=delete_aluno, anchor=CENTER, text='Deletar'.upper(), width=10, overrelief=RIDGE, font=('Ivy 7 bold'), bg=co7, fg=co1)
-    botao_deletar.place(x=648, y=170)
+    botao_deletar.place(x=848, y=170)
 
     botao_ver = Button(frame_detalhes, anchor=CENTER, text='Ver', width=8, overrelief=RIDGE, font=('Ivy 7 bold'), bg=co1, fg=co0)
-    botao_ver.place(x=777, y=170)
+    botao_ver.place(x=977, y=170)
 
 
     #Tabela Alunos
@@ -397,7 +397,7 @@ def alunos():
 
 
     hd=["nw","nw","nw", "center","center","center","center","center","center"]
-    h=[93,150,150,80,70,80,80,80,100]
+    h=[173,150,150,80,70,80,80,80,100]
     n=0
 
     for col in list_header:
@@ -553,7 +553,7 @@ def adicionar():
 #Tabela Cursos
     def mostrar_cursos():
      app_nome = Label(frame_tabela_curso, text="Tabela de Cursos", height=1,pady=0, padx=0, relief="flat", anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4)
-     app_nome.grid(row=0, column=0, padx=0, pady=10, sticky=NSEW)
+     app_nome.grid(row=0, column=0, padx=210, pady=10, sticky=NSEW)
 
      #creating a treeview with dual scrollbars
     list_header = ['ID','Curso','Duração','Preço']
@@ -594,17 +594,17 @@ def adicionar():
 
     # linha separatoria --------
     l_linha = Label(frame_detalhes, relief=GROOVE, text='h', width=1, height=100, anchor=NW, font=('Ivy 1'), bg=co0, fg=co0)
-    l_linha.place(x=394, y=10)
+    l_linha.place(x=594, y=10)
     l_linha = Label(frame_detalhes, relief=GROOVE, text='h', width=1, height=100, anchor=NW, font=('Ivy 1'), bg=co1, fg=co0)
-    l_linha.place(x=392, y=10)
+    l_linha.place(x=592, y=10)
 
 
 
      # linha separatoria  tabela--------
     l_linha = Label(frame_tabela_linha, relief=GROOVE, text='h', width=1, height=140, anchor=NW, font=('Ivy 1'), bg=co0, fg=co0)
-    l_linha.place(x=7, y=10)
+    l_linha.place(x=50, y=10)
     l_linha = Label(frame_tabela_linha, relief=GROOVE, text='h', width=1, height=140, anchor=NW, font=('Ivy 1'), bg=co1, fg=co0)
-    l_linha.place(x=5, y=10)
+    l_linha.place(x=48, y=10)
 
 
 
@@ -709,12 +709,12 @@ def adicionar():
           messagebox.showerror('Erro', 'Seleciona um dos cursos na tabela')
 
     l_nome = Label(frame_detalhes, text="Nome da Turma *", height=1, anchor=NW, font=('Ivy 10' ), bg=co1, fg=co4)
-    l_nome.place(x=424, y=10)
+    l_nome.place(x=624, y=10)
     e_nome_turma = Entry(frame_detalhes, width=35, justify='left', relief='solid')
-    e_nome_turma.place(x=427, y=40)
+    e_nome_turma.place(x=627, y=40)
 
     l_turma = Label(frame_detalhes, text="Curso *", height=1, anchor=NW, font=('Ivy 10' ), bg=co1, fg=co4)
-    l_turma.place(x=424, y=70)
+    l_turma.place(x=624, y=70)
     
     #Pegando os cursos
     cursos = ver_cursos()
@@ -725,28 +725,29 @@ def adicionar():
 
     c_curso = ttk.Combobox(frame_detalhes, width=20, font=('Ivy 8'))
     c_curso['values'] = (curso)
-    c_curso.place(x=427, y=100)
+    c_curso.place(x=627, y=100)
 
     l_data_inicio = Label(frame_detalhes, text="Data de inicio *", height=1, anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
-    l_data_inicio.place(x=427, y=130)
+    l_data_inicio.place(x=627, y=130)
     data_inicio = DateEntry(frame_detalhes, width=10, background='darkblue', foreground='white', borderwidth=2, year=2024)
-    data_inicio.place(x=427, y=160)
+    data_inicio.place(x=627, y=160)
 
 
     botao_carregar = Button(frame_detalhes,  command=nova_turma, anchor=CENTER, text='Salvar'.upper(), width=10, overrelief=RIDGE, font=('Ivy 7 bold'), bg=co3, fg=co1)
-    botao_carregar.place(x=530, y=160)
+    botao_carregar.place(x=730, y=160)
 
     botao_atualizar = Button(frame_detalhes, command=update_turma, anchor=CENTER, text='Atualizar'.upper(), width=10, overrelief=RIDGE, font=('Ivy 7 bold'), bg=co6, fg=co1)
-    botao_atualizar.place(x=620, y=160)
+    botao_atualizar.place(x=820, y=160)
 
     botao_deletar = Button(frame_detalhes, command=delete_turma, anchor=CENTER, text='Deletar'.upper(), width=10, overrelief=RIDGE, font=('Ivy 7 bold'), bg=co7, fg=co1)
-    botao_deletar.place(x=710, y=160)
+    botao_deletar.place(x=910, y=160)
 
 
     #Tabela Turmas
     def mostrar_turmas():
-     app_nome = Label(frame_tabela_turma, text="Tabela de Turmas", height=1,pady=0, padx=0, relief="flat", anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4)
-     app_nome.grid(row=0, column=0, padx=0, pady=10, sticky=NSEW)
+     app_nome = Label(frame_tabela_turma, text="Tabela de Turmas", height=1,pady=0, padx=80, relief="flat", anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4)
+     app_nome.grid(row=0, column=0, padx=160, pady=10, sticky=NSEW)
+
 
      #creating a treeview with dual scrollbars
     list_header = ['ID','Turma','Curso','Inicio']
