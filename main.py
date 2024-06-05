@@ -194,8 +194,8 @@ def alunos():
                 #Destruindo o botão pos salvar
                 botao_update.destroy()
            
-           botao_update = Button(frame_detalhes, command=update, anchor=CENTER, text='Salvar atualização'.upper(), width=10, overrelief=RIDGE, font=('Ivy 7 bold'), bg=co3, fg=co1)
-           botao_update.place(x=767, y=130)
+           botao_update = Button(frame_detalhes, command=update, anchor=CENTER, text='Salvar atualização'.upper(), width=18, overrelief=RIDGE, font=('Ivy 7 bold'), bg=co3, fg=co1)
+           botao_update.place(x=687, y=130)
 
         except IndexError:
            messagebox.showerror('Erro', 'Seleciona uma dos alunos na tabela')
